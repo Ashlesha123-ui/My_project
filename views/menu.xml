@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+        <!-- Custom Header Menu  -->
+        
+        <record id="template_page_menu" model="website.menu">
+            <field name="name">Templates</field>
+            <field name="url">/web/True</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence">10</field>
+        </record>
+
+        <record id="history_page_menu" model="website.menu">
+            <field name="name">History</field>
+            <field name="url">/History</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence">64</field>
+        </record>
+
+        <record id="help_page_menu" model="website.menu">
+            <field name="name">How-to</field>
+            <field name="url">/How-to</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence">65</field>
+        </record>
+</odoo>

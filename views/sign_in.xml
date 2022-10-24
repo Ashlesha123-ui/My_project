@@ -1,0 +1,13 @@
+<odoo>    
+
+    <!-- Custom Sign In Menu -->
+    
+    <template id="user_sign_in1" name="User Sign In" inherit_id="portal.placeholder_user_sign_in">
+        <xpath expr="." position="replace">
+            <li groups="base.group_public" t-attf-class="#{_item_class} o_no_autohide_item">
+                <a t-attf-href="/web/login" t-attf-class="#{_link_class}">Sign in</a>
+            </li>
+        </xpath>
+    </template>
+
+</odoo>

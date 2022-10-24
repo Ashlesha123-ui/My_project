@@ -1,0 +1,59 @@
+<odoo>
+
+    <!-- History Page -->
+    <template id="history">
+        <t t-call="website.layout">
+          <div class="container-fluid" style="text-align:center;background-color:#d3dae6">
+
+            <div class='container p-4' >
+              <div class='row'>
+                <div class='col-md-12 col-12' style="padding-bottom:20px">
+                  <span class='text-center'> <b>History</b> </span>
+                </div>
+                <div class='col-md-12 table-responsive'>
+                  <table class="table table-bordered p-5" style="border 1px solid #6f757d">
+                    <thead>
+                      <tr>
+                        <th>No</th>
+                        <th>Product</th>
+                        <th>Created At</th>
+                        <th>Created By</th>
+                        <th>Count</th>
+                        <th>View Results</th>
+                        <th>Print</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <t t-foreach="count" t-as="c">
+                        <tr>
+                            <td><span t-field="c.id"/></td>
+                            <td><span t-field="c.product"/></td>
+                            <td><span t-field="c.create_date"/></td>
+                            <td><span t-field="c.create_uid.name"/></td>
+                            <td><span t-field="c.pipe_count"/></td>
+                            <td>
+                              <form method="post" action="/image-preview">
+                                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                <input type="hidden" class="form-control s_website_form_input" t-att-value='c.id' name="id"/>
+                                <button class="btn btn-primary btn-sm" type="submit" id='refresh_page' style="width:100px;">View Results</button>
+                              </form>
+                            </td>
+                            <td>
+                                <button class="btn btn-primary btn-sm" style="width:100px;">
+                                    <a t-attf-href="/print-report/#{c.id}" style="text-decoration:none;color:#fff;" target="_blank">Print</a>
+                                </button>    
+                            </td>
+                        </tr>
+                      </t>
+                    </tbody>
+                  </table> 
+                </div>
+              </div>
+            </div>              
+          </div>
+
+        </t>
+    </template>
+</odoo>
+
+

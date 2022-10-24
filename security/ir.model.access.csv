@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_lecca_count,access_lecca_count,model_lecca_count,,1,1,1,1
+access_lecca_count_template,access_lecca_count_template,model_lecca_count_template,,1,1,1,1

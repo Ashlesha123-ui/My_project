@@ -1,0 +1,38 @@
+<odoo>
+
+    <!-- Templates Page -->
+
+     <template id="index">
+        <t t-call="website.layout">
+            <div class="container-fluid" style="text-align:center;background-color:#d3dae6;top:0px;padding-top:0;margin:auto; position:relative;width:100%;height:100%;">
+                <div class='container p-4'>
+                   
+                    <div class="row">
+
+                        <t t-foreach="template" t-as="c">
+                            <div class="col-md-3" style='padding-bottom:20px;text-align:center'>
+                                <form action='/Form' method='post'>
+                      <p><span style="color:#000" class="s_website_form_label_content" t-esc="token"/></p>
+                                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                    <input type='hidden' t-att-value='c' name="lecca_count_template"/>
+                                    <input type='hidden' t-att-value='c.id' name="id"/>
+
+                                    <div class="p-4" style="border:1px solid #d3dae6">
+                                        <img class="text-center" t-if="c.template_image" t-att-src="image_data_uri(c.template_image)" style="height:200px;width:200px"/>
+                                    </div>
+
+                                    <h6 class="card-title" style="padding-bottom:10px"><span t-field='c.name'/></h6>
+                                    <button class="btn btn-primary s_website_form_send" style="border-radius:25px;padding-left:40px;padding-right:40px;" type="submit" id='refresh_page'>
+                                        GET
+                                    </button>
+                                </form>
+                            </div>
+                        </t>
+                      
+                    </div>
+
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

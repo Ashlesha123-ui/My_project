@@ -1,0 +1,16 @@
+<odoo>
+      <!-- Login Restrict Page -->
+      <template id="login-restrict">
+        <t t-call="website.layout">
+          <div class="container-fluid" style="text-align:center;background-color:#d3dae6;top:0px;padding-top:0;margin:auto;position:relative;width:100%;height:100%;">
+              <div class="container p-4">
+                  <div class="rounded rounded-lg" style="padding-top:30px">
+                      <img src="/lecca/static/description/restrict.png" alt="login restrict"/>  
+                  </div>
+                      <!-- <p><span style="color:#000" class="s_website_form_label_content" t-esc="token"/></p> -->
+              </div>
+              <a  t-att-href="'/logout/all?f_uid='+str(token)" id="o_logout"><u class='m-3'>Sign Out of all Devices</u></a>
+          </div>
+        </t>
+      </template>
+</odoo>

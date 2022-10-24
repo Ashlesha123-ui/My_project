@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Custom Paper Format -->
+
+        <record id="custom_paperformat_id" model="report.paperformat">
+            <field name="name">Custom Paper Format</field>
+            <field name="default" eval="True"/>
+            <field name="format">custom</field>
+            <field name="page_height">110</field>
+            <field name="page_width">82</field>
+            <field name="orientation">Landscape</field>
+            <field name="margin_top">5</field>
+            <field name="margin_bottom">5</field>
+            <field name="margin_left">5</field>
+            <field name="margin_right">5</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">3</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <!-- Report call -->
+
+        <record id="count_report" model="ir.actions.report">
+            <field name="name">Count Report</field>
+            <field name="model">lecca.count</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">lecca.lecca_count_report</field>
+            <field name="report_file">lecca.lecca_count_report</field>
+            <field name="print_report_name">'Count Report- %s' % (object.id)</field>
+            <field name="binding_model_id" ref="lecca.model_lecca_count"/>
+            <field name="binding_type">report</field>
+            <field name="paperformat_id" ref="lecca.custom_paperformat_id"/>
+        </record>
+
+        <!-- Report Template -->
+      
+        <template id="lecca_count_report">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <!-- <t t-call="web.external_layout"> -->
+                        <div class="page">
+                            <div style="border: 1px solid black;padding:30px">
+                                <h2 style="text-align:left">Inventory Tag</h2>
+                                <p>Id: <u><span t-field="o.id"/></u></p>
+                                <p>Date and Time of creation: <u><span t-field="o.create_date"/></u></p>
+                                <p>Count: <u><b><span t-field="o.pipe_count"/></b></u></p>
+                                <p>Created By: <u><span t-field="o.create_uid"/></u></p>
+                                <p>Product: <u><span t-field="o.product"/> </u></p>
+                            </div>
+                        </div>
+                    <!-- </t> -->
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>  

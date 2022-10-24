@@ -1,0 +1,138 @@
+<odoo>
+
+      <!-- How To Page -->
+      <template id="how-to">
+        <t t-call="website.layout">
+          <div class="container-fluid" style="text-align:center;background-color:#d3dae6;top:0px;padding-top:0;margin:auto; position:relative;width:100%;height:100%;">
+              <div class="container ">
+                  <h2 class='text-center' style="font-family:baskerville-display-pt, serif; font-style:italic"> How-To-Do LECCA? </h2>
+
+                  <div class="row m-4">
+
+                    <div class="col-md-4 col-sm-6 text-center">
+                        <div class="col-md-4 col-4 m-4 mx-auto p-1 text-center rounded-pill" style="color:#fff;background-color:#3badaa;box-shadow: 4px 3px 3px #5c6470;">
+                          Step - 1
+                        </div>
+                        <div class="card item-card card-block shadow bg-white rounded rounded-lg" style="padding-top:30px">
+                            <img src="/lecca/static/images/step-1.jpg" alt="Step 1"/>
+                            <!-- <h5 class="item-card-title mt-3 mb-3">Sierra Web Development • Owner</h5>
+                            <p class="card-text">This is a company that builds websites, web apps and e-commerce solutions.</p>  -->
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4 col-sm-6  text-center">
+                        <div class="col-md-4 col-4 m-4 mx-auto p-1 text-center rounded-pill" style="color:#fff;background-color:#3badaa;box-shadow: 4px 3px 3px #5c6470;">
+                          Step - 2
+                        </div>
+                        <div class="card item-card card-block shadow bg-white rounded rounded-lg" style="padding-top:30px">
+                            <img src="/lecca/static/images/step-2.png" alt="Step 2"/>
+                            
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4 col-sm-6 text-center">
+                        <div class="col-md-4 col-4 m-4 mx-auto p-1 text-center rounded-pill" style="color:#fff;background-color:#3badaa;box-shadow: 4px 3px 3px #5c6470;">
+                          Step - 3
+                        </div>
+                        <div class="card item-card card-block shadow bg-white rounded rounded-lg" style="padding-top:30px">
+                            <img src="/lecca/static/images/step-3.jpg" alt="Step 3"/>
+                        </div>
+                    </div>
+
+                  </div>
+
+                  <div class="row m-4">
+
+                    <div class="col-md-4 col-sm-6 text-center">
+                        <div class="col-md-4 col-4 m-4 mx-auto p-1 text-center rounded-pill" style="color:#fff;background-color:#3badaa;box-shadow: 4px 3px 3px #5c6470;">
+                          Step - 4
+                        </div>   
+                        <div class="card item-card card-block shadow bg-white rounded rounded-lg" style="padding-top:30px">
+                            <img src="/lecca/static/images/step-4.jpg" alt="Step 4"/>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4 col-sm-6 text-center">
+                        <div class="col-md-4 col-4 m-4 mx-auto p-1 text-center rounded-pill" style="color:#fff;background-color:#3badaa;box-shadow: 4px 3px 3px #5c6470;">
+                          Step - 5
+                        </div>
+                        <div class="card item-card card-block shadow bg-white rounded rounded-lg" style="padding-top:30px">
+                            <img src="/lecca/static/images/step-5.png" alt="Step 5"/>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4 col-sm-6 text-center">
+                        <div class="col-md-4 col-4 m-4 mx-auto p-1 text-center rounded-pill" style="color:#fff;background-color:#3badaa;box-shadow: 4px 3px 3px #5c6470;">
+                          Step - 6
+                        </div>
+                        <div class="card item-card card-block shadow bg-white rounded rounded-lg" style="padding-top:30px">
+                            <img src="/lecca/static/images/step-6.png" alt="Step 6"/>
+                        </div>
+                    </div>
+
+                  </div>
+              
+              </div>
+
+
+              <div class="container p-4">
+                  <h2 class='text-center' style="font-family:baskerville-display-pt, serif; font-style:italic"> Do's <![CDATA[&amp;]]> Dont's </h2>
+                  <p class="card-text text-left p-4" >To have better accuracy and results its requested for users to make sure the objects are neatly arranged, to not have any objects in the background which might result in inaccuracies. Examples are shown.</p> 
+                  <div class="row">
+
+                    <div class="col-md-4 p-3 col-sm-6 text-center">
+                        <div class="card item-card card-block shadow bg-white rounded rounded-lg" style="padding-top:30px">
+                            <img src="/lecca/static/img_do/do_1.jpg" alt="Do 1"/>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 p-3 col-sm-6 text-center">
+                        <div class="card item-card card-block shadow bg-white rounded rounded-lg" style="padding-top:30px">
+                            <img src="/lecca/static/img_do/do_2.jpg" alt="Do 2"/>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 p-3 col-sm-6 text-center">
+                        <div class="card item-card card-block shadow bg-white rounded rounded-lg" style="padding-top:30px">
+                            <img src="/lecca/static/img_do/do_3.jpg" alt="Do 3"/>
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+
+                    <div class="col-md-6 p-3 col-sm-6 text-center">
+                        <div class="card item-card card-block shadow bg-white rounded rounded-lg" style="padding-top:30px">
+                            <img src="/lecca/static/img_do/do_4.jpg" alt="Do 4"/>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-6 p-3 col-sm-6 text-center">
+                        <div class="card item-card card-block shadow bg-white rounded rounded-lg" style="padding-top:30px">
+                            <img src="/lecca/static/img_do/do_5.jpg" alt="Do 5"/>
+                        </div>
+                    </div>
+
+                  </div>
+              
+              </div>
+
+
+          </div>
+        </t>
+    </template>
+</odoo>
+
+
+
+
+
+
+
+
+

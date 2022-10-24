@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Remove Footer -->
+    <template id="replace_footer" inherit_id="website.footer_custom" name="Footer">
+        <xpath expr="//div[@id='footer']" position="attributes">
+          <!-- Write here your custom code -->
+            <attribute name="style">display:none</attribute>
+        </xpath>
+
+        <xpath expr="//div[hasclass('o_footer_copyright')]" position="attributes">
+            <!-- <t t-set="no_copyright" t-value="True"/> -->
+            <attribute name="style">display:none</attribute>
+        </xpath>
+    </template>
+
+    <!-- Homepage Image -->
+    <template id="new_homepage" inherit_id="website.homepage">
+        <xpath expr="//div[@id='wrap']" position="replace">
+            <div id="wrap" class="oe_structure">
+                <div class='container-fluid'>
+                    <div class="row">
+                        <div style='background-position: center;background-size: cover;'/>
+                            <img src="/lecca/static/description/home.png" class="card-img-top" alt="..."/>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+    <!-- Custom Header -->
+    <template id="replace_header" inherit_id="website.layout">
+        <xpath expr="//header//nav" position="attributes">
+            <attribute name="style">background-color:#d3dae6;</attribute>
+        </xpath>
+    </template>
+
+    <template id="template_header_hamburger_oe_structure_header_hamburger_3" inherit_id="website.template_header_hamburger" name="Template Header Hamburger (oe_structure_header_hamburger_3)">
+    <xpath expr="//*[hasclass('oe_structure')][@id='oe_structure_header_hamburger_3']" position="replace">
+        <div class="oe_structure oe_structure_solo" id="oe_structure_header_hamburger_3">
+            <section class="s_text_block" data-snippet="s_text_block" data-name="Text">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <!-- Separator -->
+                        <div class="col-lg-12">
+                            <div class="s_hr text-left pt16 pb16" data-name="Separator">
+                                <hr class="w-100 mx-auto" style="border-top-width: 1px; border-top-style: solid; border-color: var(--300);"/>
+                            </div>
+                        </div>
+                        <!-- Social -->
+                        <div class="col-lg-7 pb16">
+                            <div class="s_share text-left no_icon_color" data-name="Social Media">
+                                <h5 class="s_share_title d-none">Follow us</h5>
+                                <a href="https://www.facebook.com/PrixgentechSolutions/" class="s_share_facebook" target="_blank">
+                                    <i class="fa fa-facebook m-1"/>
+                                </a>
+                                <a href="https://twitter.com/prixgentech" class="s_share_twitter" target="_blank">
+                                    <i class="fa fa-twitter m-1"/>
+                                </a>
+                                <a href="https://www.linkedin.com/company/prixgen-tech-solutions-private-limited/" class="s_share_linkedin" target="_blank">
+                                    <i class="fa fa-linkedin m-1"/>
+                                </a>
+                                <!-- <a href="/website/social/instagram" class="s_share_instagram" target="_blank">
+                                    <i class="fa fa-instagram m-1"/>
+                                </a> -->
+                            </div>
+                        </div>
+                        <!-- Contact -->
+                        <div class="col-lg-2 text-lg-right pb16">
+                            <i class="fa fa-1x fa-fw fa-envelope mr-2"/><span><a href="mailto:info@prixgen.com">info@prixgen.com</a></span>
+                        </div>
+                        <div class="col-lg-3 text-lg-right pb16">
+                            <i class="fa fa-1x fa-fw fa-phone mr-2"/><span class="o_force_ltr"><a href="tel:+91 (0821) 2548666">+91 (0821) 2548666</a></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </xpath>
+    </template>
+
+</odoo> 

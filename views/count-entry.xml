@@ -1,0 +1,96 @@
+<odoo>
+
+	<template id="request_form">
+        <t t-call="website.layout">
+
+    		<div class="container-fluid" style="background-color:#d3dae6;top:0px;padding-top:0;margin:auto; position:relative;width:100%;height:100%;">
+
+	        	<div class="container p-1" style="background-color:#d3dae6;">
+	            	<form role="form" method="post" action="/Details" id='form_id' enctype="multipart/form-data">
+
+	            		<input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+	            	
+	                	<div class="s_website_form_rows row s_col_no_bgcolor">
+
+	                		<t t-foreach="lecca_count" t-as="c_id">
+	                			<input type='hidden' name='id' t-att-value='lecca_count_template_id'/>
+	                			<input type='hidden' name='count_id' t-att-value='c_id.id'/>
+	                		</t>
+
+	                		<div class='col-md-12 col-12'>
+	                    		<div class="form-group col-12 s_website_form_field s_website_form_required"
+	                             	data-type="text" data-name="Field">
+	                            	<div class="row s_col_no_resize s_col_no_bgcolor">
+	                                	<label class="col-form-label col-sm-auto s_website_form_label"
+	                                       	style="width: 200px">
+	                                    	<span class="s_website_form_label_content">Product</span>
+	                                    	<!-- <span class="s_website_form_mark" style='color:red'>*</span> -->
+	                                	</label>
+	                                	<div class="col-6 col-lg-6">
+	                                    	<input id="product" type="text" class="form-control s_website_form_input" t-att-value="product" name="product" required='1'/>
+	                                	</div>
+	                            	</div>
+	                        	</div>
+
+	                        	<div class="form-group col-12 s_website_form_field" data-type="char"
+	                             	data-name="Field">
+	                            	<div class="row s_col_no_resize s_col_no_bgcolor">
+	                                	<label class="col-form-label col-sm-auto s_website_form_label"
+	                                       	style="width: 200px" >
+	                                    	<span class="s_website_form_label_content">Upload Image</span>
+	                                	</label>
+	                                	<div class="col-lg-6 col-6">
+	                                    	<input type="file" class="form-control s_website_form_input" id="img"  oninput="pic.src=window.URL.createObjectURL(this.files[0])" accept="image/*" name="image" required="1"/>
+	                                	</div>
+	                            	</div>
+	                        	</div>
+
+	                           	<t t-foreach="lecca_count_template" t-as="c">
+	                             	<div class="form-group col-12 s_website_form_field s_website_form_required"
+	                                 	data-type="char" data-name="Field">
+	                                	<div class="row s_col_no_resize s_col_no_bgcolor">
+	                                    	<label class="col-form-label col-sm-auto s_website_form_label"
+	                                           	style="width: 200px" >
+	                                        	<span class="s_website_form_label_content">Template</span>
+	                                    	</label>
+	                                    	<div class="col-sm text-left">
+	                                    		<span class="s_website_form_label_content" t-esc="c.name"/>
+	                                    	</div>
+	                                	</div>
+	                            	</div>
+	                            </t>
+	                        	
+
+	                        	<div class="form-group col-12 s_website_form_field s_website_form_required">
+	                            	<div class="row s_col_no_resize s_col_no_bgcolor">
+	                                    	<input type="hidden" class="form-control s_website_form_input" name="created_by" t-att-value="created_by"/>
+	                            	</div>
+	                        	</div>
+
+	                        	<div class="form-group col-12 s_website_form_submit" data-name="Submit Button">
+	                            	<div style="width: 200px;" class="s_website_form_label"/>
+	                                	<div class='col-md-6 col-6 text-left'>
+	                                    	<button class="btn btn-primary" type="submit" id='refresh_page'>
+	                                        	Count
+	                                    	</button>          
+	                                    </div>             	
+	                    			</div>
+	                        	</div>
+
+	                        	<div class="form-group col-12 s_website_form_field s_website_form_required" >
+	                            	<div class="row">
+	                            		<img id="pic" style="height:auto;max-width:500px;padding-left:15; float:left;z-index:9999"/>
+	                            		<!-- <img class="img_fluid" t-att-src="image_data_uri(out_put_img)" style="height:auto;max-width:500px; float:left;z-index:9999"/> -->
+	                                    <input type="hidden" class="form-control s_website_form_input" name="created_at" t-att-value="created_at"/>
+	                            	</div>
+	                        	</div>
+	                		</div>
+	            	</form>
+	        	</div>
+        
+        	</div>
+                	
+        </t>
+    </template>
+
+</odoo>

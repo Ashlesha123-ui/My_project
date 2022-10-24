@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+
+        <!-- Lecca count form view -->
+
+        <record id="lecca_count_form" model="ir.ui.view">
+            <field name="name">lecca.count.form</field>
+            <field name="model">lecca.count</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class='row'>
+                            <div class='col-md-6'>
+                                <group>
+                                    <field name="product" string="Product"></field>
+                                    <field name="template_id" string='Templates'></field> 
+                                </group>
+                            </div>
+                            <div class="col-md-6">
+                                <group>
+                                    <field name="attachment" string='Image' widget="image" border="1"></field> 
+                                </group>
+                            </div>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Lecca count List view -->
+
+        <record id="lecca_count_tree" model="ir.ui.view">
+            <field name="name">lecca.count.tree</field>
+            <field name="model">lecca.count</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="product"></field>
+                    <field name="template_id"></field> 
+                </tree>
+            </field>
+        </record>
+
+        <!-- Settings Menu Action-->
+
+        <record id="action_lecca_settings_menu" model="ir.actions.act_window">
+            <field name="name">lecca count settings</field>
+            <field name="res_model">lecca.count</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <!-- Lecca Template List View -->
+
+        <record id="lecca_count_template_tree" model="ir.ui.view">
+            <field name="name">lecca.count.template.tree</field>
+            <field name="model">lecca.count.template</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"></field>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Templates Menu Action-->
+
+        <record id="action_lecca_templates_menu" model="ir.actions.act_window">
+            <field name="name">template settings</field>
+            <field name="res_model">lecca.count.template</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Parent Menu Action-->
+
+        <record id="action_lecca" model="ir.actions.act_window">
+            <field name="name">lecca count</field>
+            <field name="res_model">lecca.count</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Menu Items -->
+
+        <menuitem id="lecca_menu" name="lecca" action="action_lecca"/>
+        <menuitem id="lecca_settings_menu" parent="lecca_menu" name="Settings" action="action_lecca_settings_menu"/>
+        <menuitem id="lecca_templates_menu" parent="lecca_settings_menu" name="Templates" action="action_lecca_templates_menu"/>
+    </data>
+</odoo>

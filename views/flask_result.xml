@@ -1,0 +1,32 @@
+<odoo>
+
+    <!-- Image Preview -->
+    
+     <template id="flask-result">
+        <t t-call="website.layout">
+        
+            <div class='container-fluid p-5'>
+               
+                <div class="row">
+
+                    <!-- <t t-foreach="lecca_count" t-as="c"> -->
+                        <!-- <div class="col-md-6 col-sm-6" style="padding-bottom:20px">
+                            <div class="card">
+                                <img class="text-center" t-if="c.attachment" t-att-src="image_data_uri(c.attachment)" />
+                            </div>
+                        </div>
+ -->
+                        <div class="col-md-6 col-sm-6" style="padding-bottom:20px">
+                            <div class="card">
+<!--                                 <img class="text-center" t-if="out_put_img" t-att-src="image_data_uri(out_put_img)" />
+                                <span t-if="pipe_count" t-esc="pipe_count"/> -->
+                            </div>
+                        </div>
+                    <!-- </t> -->
+                  
+                </div>
+
+            </div>
+        </t>
+    </template>
+</odoo>
